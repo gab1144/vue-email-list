@@ -28,10 +28,15 @@
       
       <div class="row">
         <div class="col button-col">
+          <div>
+            <label for="n-email">Numero di email da generare</label><br>
+            <input type="number" min="1" id="n-email" v-model="limit">
+          </div>
+
           <button @click="getApi()" class="btn btn-info">Genera la lista di email</button>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 p-5">
           <ul v-if="isLoaded">
             <li v-for="email in emailList">{{email}}</li>
           </ul>
